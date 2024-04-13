@@ -21,12 +21,10 @@ const ProductDetailPage = ({ route, navigation }) => {
   return (
     <ScrollView style={{ flex: 1 }}>
       <View style={styles.container}>
-        {/* Add the Image component here */}
         <Image
           source={typeof product.image === 'string' ? { uri: product.image } : product.image}
           style={styles.image}
         />
-        {/* Render other product details */}
         <Text style={styles.name}>{product.name}</Text>
         <Text style={styles.price}>${product.price}</Text>
         <Text>{INGREDIENTS}: {product.ingredients}</Text>

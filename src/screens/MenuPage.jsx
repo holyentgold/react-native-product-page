@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, Button, FlatList, StyleSheet, Dimensions, Image, TextInput, TouchableOpacity } from 'react-native';
 import { productsData } from '../constants';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Import FontAwesome icons
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const MenuPage = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [cartItems, setCartItems] = useState([]); // State to track cart items
+  const [cartItems, setCartItems] = useState([]);
   
   const filteredProducts = productsData.filter(product =>
     product.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -24,8 +24,8 @@ const MenuPage = ({ navigation }) => {
   );
 
   const handleAddToCart = (product) => {
-    setCartItems([...cartItems, product]); // Add selected product to cart items
-    navigation.navigate('Cart', { cartItems }); // Navigate to Cart with cart items
+    setCartItems([...cartItems, product]);
+    navigation.navigate('Cart', { cartItems });
   };
 
   const screenWidth = Dimensions.get('window').width;

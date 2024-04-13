@@ -4,7 +4,6 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'rea
 const CartPage = ({ route }) => {
   const { cartItems } = route.params;
 
-  // Initialize quantities state with default quantity 1 for each item
   const initialQuantities = Array(cartItems.length).fill(1);
   const [quantities, setQuantities] = useState(initialQuantities);
 
@@ -12,7 +11,7 @@ const CartPage = ({ route }) => {
   const handleQuantityChange = (index, increment) => {
     const newQuantities = [...quantities];
     newQuantities[index] += increment ? 1 : -1;
-    if (newQuantities[index] < 1) newQuantities[index] = 1; // Ensure quantity is at least 1
+    if (newQuantities[index] < 1) newQuantities[index] = 1; 
     setQuantities(newQuantities);
   };
 
